@@ -1,3 +1,1 @@
-﻿hangman
-test
-testing
+﻿hangman test testing bill finding experiment

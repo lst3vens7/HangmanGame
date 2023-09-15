@@ -31,20 +31,14 @@ namespace HangmanGame
                 Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine(contents);
-            string[] array = contents.Split('\n', (char)StringSplitOptions.RemoveEmptyEntries);
 
-            //Bug with spliting string, will fix at later date
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i]);
-            }
+            //Text file must use spaces instead of new lines, as bug was causgin options to disappear
+            string[] array = contents.Split(' ');//, (char)StringSplitOptions.RemoveEmptyEntries);
 
             Random rnd = new Random();
             int number = rnd.Next(1, array.Length);
 
-            string word = "hangman";//array[number];
+            string word = array[number];
             bool gameLost = false;
             int lives = 6;
 
